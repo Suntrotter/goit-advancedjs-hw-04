@@ -1,0 +1,177 @@
+body {
+  padding: 36px 156px;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+}
+
+ul {
+  margin: 0;
+  list-style: none;
+  padding: 0;
+}
+
+p {
+  margin: 0;
+}
+
+.form {
+  margin: 0 auto;
+  display: flex;
+  gap: 8px;
+  height: 40px;
+  width: 371px;
+  margin-bottom: 32px;
+}
+
+.form input {
+  width: 272px;
+  border-radius: 4px;
+  font-weight: 400;
+  border: 1px solid #808080;
+  padding: 8px 16px;
+  font-size: 16px;
+  line-height: 1.5;
+  outline: none;
+}
+
+.form input:hover {
+  border-color: black;
+}
+
+.form input:focus {
+  border-color: #4e75ff;
+}
+
+.form button {
+  width: 91px;
+  background-color: #4e75ff;
+  border: none;
+  border-radius: 8px;
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.form button:hover,
+.form button:focus {
+  background: #6c8cff;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  width: 1129px;
+  margin: 0 auto;
+}
+
+.gallery-item {
+  box-sizing: border-box;
+  flex-basis: calc((100% - 48px) / 3);
+  /* 48px accounts for the two 24px gaps */
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #808080;
+}
+
+
+.gallery-item ul {
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 25px 4px 20px;
+}
+
+.gallery-item li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  line-height: 2;
+}
+
+.gallery-item p:first-child {
+  font-weight: 600;
+  line-height: 1.33;
+}
+
+.loader {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #2e2f42;
+  z-index: 1000;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+  /* Initially hidden */
+}
+
+/* Loader for the search button, positioned below the form */
+.loader.search {
+  top: calc(40px + 32px);
+  /* Adjust as needed (form height + margin) */
+}
+
+/* Loader for the load more button, positioned below the gallery */
+.loader.load-more {
+  top: calc(10px + 32px + 10px);
+  border: 10px red solid;
+  /* Adjust to space from the button */
+}
+
+.load-more-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #007bff;
+  /* Blue background */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  margin: 20px auto;
+  /* Center the button horizontally */
+  transition: background-color 0.3s ease;
+}
+
+.load-more-btn:hover {
+  background-color: #0056b3;
+  /* Darker blue on hover */
+}
+
+.load-more-btn:active {
+  background-color: #004080;
+  /* Even darker blue on click */
+}
+
+.load-more-btn.hidden {
+  display: none;
+  /* Hide button when it's not needed */
+}
+
+.load-more-btn {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.load-more-btn:hover {
+  background-color: #0056b3;
+}
+
+.hidden {
+  display: none;
+}
