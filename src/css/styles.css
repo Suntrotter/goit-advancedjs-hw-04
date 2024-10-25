@@ -1,5 +1,5 @@
 body {
-  padding: 35px 156px;
+  padding: 36px 156px;
   margin: 0;
   font-family: 'Montserrat', sans-serif;
   font-size: 12px;
@@ -15,17 +15,17 @@ p {
   margin: 0;
 }
 
-.form {
+.search-form {
   margin: 0 auto;
   display: flex;
   gap: 8px;
   height: 40px;
-  width: 371px;
+  width: 370px;
   margin-bottom: 32px;
 }
 
-.form input {
-  width: 272px;
+.search-form input {
+  width: 238px;
   border-radius: 4px;
   font-weight: 400;
   border: 1px solid #808080;
@@ -35,16 +35,16 @@ p {
   outline: none;
 }
 
-.form input:hover {
+.search-form input:hover {
   border-color: black;
 }
 
-.form input:focus {
+.search-form input:focus {
   border-color: #4e75ff;
 }
 
-.form button {
-  width: 91px;
+.search-button {
+  width: 90px;
   background-color: #4e75ff;
   border: none;
   border-radius: 8px;
@@ -53,38 +53,42 @@ p {
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
+  cursor: pointer;
 }
 
-.form button:hover,
-.form button:focus {
+.search-button:hover,
+.search-button:focus {
   background: #6c8cff;
 }
 
-.gallery {
+.photo-gallery {
   display: flex;
   flex-wrap: wrap;
   gap: 24px;
-  width: 1129px;
+  width: 100%;
   margin: 0 auto;
+  justify-content: center;
 }
 
-.gallery-item {
+.photo-item {
   box-sizing: border-box;
-  flex-basis: calc((100% - 48px) / 3);
-  /* 48px accounts for the two 24px gaps */
+  flex-basis: calc((100% - 24px * 2) / 3);
   display: flex;
   flex-direction: column;
   border: 1px solid #808080;
 }
 
+.photo-image {
+  width: 100%;
+}
 
-.gallery-item ul {
+.photo-item ul {
   display: flex;
   justify-content: space-between;
   padding: 4px 25px 4px 20px;
 }
 
-.gallery-item li {
+.photo-item li {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -92,86 +96,56 @@ p {
   line-height: 2;
 }
 
-.gallery-item p:first-child {
+.photo-item p:first-child {
   font-weight: 600;
   line-height: 1.33;
 }
 
-.loader {
-  background-color: rgba(255, 255, 255, 0.9);
-  padding: 10px;
-  border-radius: 8px;
-  font-size: 16px;
-  color: #2e2f42;
-  z-index: 1000;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+.loading-indicator {
+  width: 68px;
+  height: 68px;
+  border: 5px solid #4e75ff;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  box-sizing: border-box;
+  animation: spin 1s linear infinite;
   display: none;
-  /* Initially hidden */
+  margin: 100px auto 0;
 }
 
-/* Loader for the search button, positioned below the form */
-.loader.search {
-  top: calc(40px + 32px);
-  /* Adjust as needed (form height + margin) */
-}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
 
-/* Loader for the load more button, positioned below the gallery */
-.loader.load-more {
-  top: calc(10px + 32px + 10px);
-  border: 10px red solid;
-  /* Adjust to space from the button */
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .load-more-btn {
-  display: inline-block;
-  padding: 10px 20px;
-  font-size: 16px;
-  color: #fff;
-  background-color: #007bff;
-  /* Blue background */
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  text-align: center;
-  margin: 20px auto;
-  /* Center the button horizontally */
-  transition: background-color 0.3s ease;
-}
-
-.load-more-btn:hover {
-  background-color: #0056b3;
-  /* Darker blue on hover */
-}
-
-.load-more-btn:active {
-  background-color: #004080;
-  /* Even darker blue on click */
-}
-
-.load-more-btn.hidden {
-  display: none;
-  /* Hide button when it's not needed */
-}
-
-.load-more-btn {
-  display: block;
-  margin: 20px auto;
-  padding: 10px 20px;
-  font-size: 16px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.load-more-btn:hover {
-  background-color: #0056b3;
+    background-color: #4e75ff;
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    cursor: pointer;
+    border-radius: 8px;
+      padding: 8px 16px;
+      width: 125px;
+      height: 40px;
+      margin-top: 32px;
+      display: flex;
+      margin-left: calc(50% - 72px);
 }
 
 .hidden {
   display: none;
+}
+
+.container {
+  max-width: 1240px;
+  margin: 0 auto;
 }
