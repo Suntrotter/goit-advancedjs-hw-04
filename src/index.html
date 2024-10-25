@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Image search</title>
+    <title>Photo Finder</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap"
       rel="stylesheet"
@@ -12,23 +12,20 @@
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
-    <form class="form">
-      <input
-        type="text"
-        name="search"
-        placeholder="Search images..."
-        required
-      />
-      <button type="submit">Search</button>
-    </form>
-
-    <div class="loader" style="display: none">Loading...</div>
-
-    <!-- Image gallery -->
-    <ul class="gallery"></ul>
-
-    <!-- Load More button -->
-    <button type="button" class="load-more-btn hidden">Load more</button>
+    <div class="container">
+      <form class="search-form">
+        <input
+          type="text"
+          name="search"
+          placeholder="Search photos..."
+          required
+        />
+        <button type="submit" class="search-button">Search</button>
+      </form>
+      <ul class="photo-gallery"></ul>
+      <button type="button" class="load-more-btn hidden">Load more</button>
+      <span class="loading-indicator hidden"></span>
+    </div>
 
     <script type="module" src="./main.js"></script>
   </body>
